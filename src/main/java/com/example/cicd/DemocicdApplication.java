@@ -11,7 +11,7 @@ public class DemocicdApplication {
 	
 	@GetMapping("/welcome")
 	public String welcome() {
-		System.out.println("Failure")
+		System.out.println("success");
 		return "Welcome to GithubActions";
 	}
 	
