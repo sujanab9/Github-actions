@@ -32,7 +32,7 @@ jobs:
       continue-on-error: true
     - name: Check build status
       run: |
-        if [ ${{ steps.maven.outputs.exit-code }} -ne 0 ]; then
+        if [ ${{ job.status }} == 'failure' ]; then
           echo "Build failed"
           # Add email alert command here
         else
