@@ -28,12 +28,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: | 
-          set -e
-          mvn clean install
+        run: |
+          mvn clean package || EXIT_CODE=$?
+
     - name: Check build status
-      run: |
-        if failure()
-        run: echo 'Build failed!'
+      if: ${{ env.EXIT_CODE }}
+      run: echo 'Build failed!'
 
    
