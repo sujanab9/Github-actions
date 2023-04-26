@@ -29,10 +29,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: | 
+          set -e
           mvn clean install
-          if [ $? -ne 0 ]; then
-            exit 1
-          fi
     - name: Check build status
       run: |
         if failure()
