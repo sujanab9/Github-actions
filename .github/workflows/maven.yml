@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
     - name: Check build status
-      run: 
+      run: |
         if [ ${{ steps.maven.outputs.exit-code }} -ne 0 ]; then
           echo "Build failed"
           # Add email alert command here
